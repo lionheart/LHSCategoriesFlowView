@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "LHSCategoriesFlowView"
   s.version      = "0.0.1"
-  s.summary      = ""
+  s.summary      = "A simple view that displays tags in a flow layout."
   s.license      = {
     :type => 'Apache 2.0',
     :file => 'LICENSE' }
