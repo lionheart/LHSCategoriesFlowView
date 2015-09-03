@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     :tag => "v#{s.version}"
   }
 
-  s.source_files  = 'LHSCategoriesFlowView/*.h'
+  s.source_files  = 'LHSCategoriesFlowView/*.{h,m}'
   s.exclude_files = 'Classes/Exclude'
 
   s.frameworks = 'UIKit', 'Foundation'
