@@ -1,0 +1,6 @@
+framework module Pods_LHSCategoriesFlowView_Example {
+  umbrella header "Pods-LHSCategoriesFlowView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

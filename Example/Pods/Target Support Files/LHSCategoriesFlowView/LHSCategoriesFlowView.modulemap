@@ -1,0 +1,6 @@
+framework module LHSCategoriesFlowView {
+  umbrella header "LHSCategoriesFlowView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'LHSCategoriesFlowView_Example', :exclusive => true do
+  pod "LHSCategoriesFlowView", :path => "../"
+  pod "LHSCategoryCollection"
+end
+
+target 'LHSCategoriesFlowView_Tests', :exclusive => true do
+  pod "LHSCategoriesFlowView", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
