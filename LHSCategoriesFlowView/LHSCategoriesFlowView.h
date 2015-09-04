@@ -13,5 +13,7 @@
 
 - (instancetype)initWithTitles:(NSArray *)titles;
 - (instancetype)initWithTitles:(NSArray *)titles labelClass:(Class)labelClass;
+- (instancetype)initWithTitles:(NSArray *)titles labelClass:(Class)labelClass width:(CGFloat)width;
+- (instancetype)initWithTitles:(NSArray *)titles labelClass:(Class)labelClass width:(CGFloat)width verticalMargin:(CGFloat)margin;
 
 @end

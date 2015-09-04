@@ -10,10 +10,9 @@
 
 @implementation LHSCategoriesFlowView
 
-- (instancetype)initWithTitles:(NSArray *)titles labelClass:(__unsafe_unretained Class)labelClass {
+- (instancetype)initWithTitles:(NSArray *)titles labelClass:(__unsafe_unretained Class)labelClass width:(CGFloat)width verticalMargin:(CGFloat)margin {
     self = [super init];
     if (self) {
-        CGFloat width = 200;
         CGFloat currentRowWidth = 0;
         
         UIFont *font = [UIFont systemFontOfSize:16];
@@ -54,7 +53,10 @@
             UIView *row = rows[i];
             [self addSubview:row];
             
-            NSArray *widthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"|[view(width)]" options:0 metrics:@{@"width": @(300)} views:@{@"view": row}];
+            NSArray *widthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"|[view(width)]"
+                                                                               options:0
+                                                                               metrics:@{@"width": @(width)}
+                                                                                 views:@{@"view": row}];
             [self addConstraints:widthConstraint];
             
             if (i == 0) {
@@ -64,7 +66,7 @@
                                                                                  toItem:self
                                                                               attribute:NSLayoutAttributeTop
                                                                              multiplier:1
-                                                                               constant:15];
+                                                                               constant:0];
                 
                 [self addConstraint:constraint];
             }
@@ -76,13 +78,21 @@
                                                                                  toItem:previousRow
                                                                               attribute:NSLayoutAttributeBottom
                                                                              multiplier:1
-                                                                               constant:5];
+                                                                               constant:margin];
                 
                 [self addConstraint:constraint];
             }
         }
     }
     return self;
+}
+
+- (instancetype)initWithTitles:(NSArray *)titles labelClass:(Class)labelClass width:(CGFloat)width {
+    return [self initWithTitles:titles labelClass:labelClass width:200 verticalMargin:5];
+}
+
+- (instancetype)initWithTitles:(NSArray *)titles labelClass:(Class)labelClass {
+    return [self initWithTitles:titles labelClass:labelClass width:200];
 }
 
 - (instancetype)initWithTitles:(NSArray *)titles {
