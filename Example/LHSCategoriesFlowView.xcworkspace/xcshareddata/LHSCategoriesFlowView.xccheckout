@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>21C549B2-79CE-46E1-B965-DF0C4A93228F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LHSCategoriesFlowView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F2EBA865AB2DA738E517622CBE2FC2B0A9D580BC</key>
+		<string>github.com:lionheart/LHSCategoriesFlowView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/LHSCategoriesFlowView.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F2EBA865AB2DA738E517622CBE2FC2B0A9D580BC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:lionheart/LHSCategoriesFlowView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F2EBA865AB2DA738E517622CBE2FC2B0A9D580BC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F2EBA865AB2DA738E517622CBE2FC2B0A9D580BC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LHSCategoriesFlowView</string>
+		</dict>
+	</array>
+</dict>
+</plist>

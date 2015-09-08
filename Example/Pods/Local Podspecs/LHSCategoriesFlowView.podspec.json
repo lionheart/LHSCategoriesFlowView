@@ -1,6 +1,6 @@
 {
   "name": "LHSCategoriesFlowView",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "summary": "A simple view that displays tags in a flow layout.",
   "license": {
     "type": "Apache 2.0",
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/lionheart/LHSCategoriesFlowView.git",
-    "tag": "v0.0.2"
+    "tag": "v0.1.0"
   },
   "source_files": "LHSCategoriesFlowView/*.{h,m}",
   "exclude_files": "Classes/Exclude",

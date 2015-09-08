@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37B5BD57A6E04792021FCD95"
+               BlueprintIdentifier = "C6BB7C048C5F88017834C447"
                BuildableName = "LHSCategoriesFlowView.framework"
                BlueprintName = "LHSCategoriesFlowView"
                ReferencedContainer = "container:Pods.xcodeproj">
