@@ -13,8 +13,44 @@
 - (instancetype)initWithTitles:(NSArray *)titles labelClass:(__unsafe_unretained Class)labelClass width:(CGFloat)width verticalMargin:(CGFloat)margin {
     self = [super init];
     if (self) {
-        CGFloat currentRowWidth = 0;
+        UIView *containerView = [[UIView alloc] init];
+        containerView.translatesAutoresizingMaskIntoConstraints = NO;
+
+        [self addSubview:containerView];
+
+        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                          attribute:NSLayoutAttributeLeft
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:containerView
+                                                                          attribute:NSLayoutAttributeLeft
+                                                                         multiplier:1
+                                                                           constant:0];
+        NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                           attribute:NSLayoutAttributeRight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:containerView
+                                                                           attribute:NSLayoutAttributeRight
+                                                                          multiplier:1
+                                                                            constant:0];
+        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                         attribute:NSLayoutAttributeTop
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:containerView
+                                                                         attribute:NSLayoutAttributeTop
+                                                                        multiplier:1
+                                                                          constant:0];
+        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                            attribute:NSLayoutAttributeHeight
+                                                                            relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                               toItem:containerView
+                                                                            attribute:NSLayoutAttributeHeight
+                                                                           multiplier:1
+                                                                             constant:0];
         
+        [self addConstraints:@[leftConstraint, rightConstraint, topConstraint, bottomConstraint]];
+
+        CGFloat currentRowWidth = 0;
+
         UIFont *font = [UIFont systemFontOfSize:16];
         
         NSMutableArray *rows = [NSMutableArray array];
@@ -51,24 +87,24 @@
         
         for (NSInteger i=0; i<rows.count; i++) {
             UIView *row = rows[i];
-            [self addSubview:row];
+            [containerView addSubview:row];
             
             NSArray *widthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"|[view(width)]"
                                                                                options:0
                                                                                metrics:@{@"width": @(width)}
                                                                                  views:@{@"view": row}];
-            [self addConstraints:widthConstraint];
+            [containerView addConstraints:widthConstraint];
             
             if (i == 0) {
                 NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:row
                                                                               attribute:NSLayoutAttributeTop
                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self
+                                                                                 toItem:containerView
                                                                               attribute:NSLayoutAttributeTop
                                                                              multiplier:1
                                                                                constant:0];
                 
-                [self addConstraint:constraint];
+                [containerView addConstraint:constraint];
             }
             else {
                 UIView *previousRow = rows[i-1];
@@ -80,7 +116,19 @@
                                                                              multiplier:1
                                                                                constant:margin];
                 
-                [self addConstraint:constraint];
+                [containerView addConstraint:constraint];
+            }
+            
+            if (i == rows.count - 1) {
+                NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:row
+                                                                              attribute:NSLayoutAttributeBottom
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:containerView
+                                                                              attribute:NSLayoutAttributeBottom
+                                                                             multiplier:1
+                                                                               constant:0];
+                
+                [containerView addConstraint:constraint];
             }
         }
     }
