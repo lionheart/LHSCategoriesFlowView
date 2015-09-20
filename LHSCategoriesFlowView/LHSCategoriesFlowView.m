@@ -8,9 +8,14 @@
 
 #import "LHSCategoriesFlowView.h"
 
+static const CGFloat kLHSCategoriesHorizontalMargin = 10;
+
 @implementation LHSCategoriesFlowView
 
-- (instancetype)initWithTitles:(NSArray *)titles labelClass:(__unsafe_unretained Class)labelClass width:(CGFloat)width verticalMargin:(CGFloat)margin {
+- (instancetype)initWithTitles:(NSArray *)titles
+                    labelClass:(__unsafe_unretained Class)labelClass
+                         width:(CGFloat)width
+                verticalMargin:(CGFloat)margin {
     self = [super init];
     if (self) {
         UIView *containerView = [[UIView alloc] init];
@@ -80,7 +85,7 @@
             }
             
             [labels addObject:label];
-            currentRowWidth += labelWidth;
+            currentRowWidth += labelWidth + kLHSCategoriesHorizontalMargin;
         }
         
         [rows addObject:[self rowWithLabels:labels]];
@@ -168,8 +173,6 @@
     
     NSMutableArray *constraints = [NSMutableArray array];
     
-    CGFloat marginBetweenLabels = 10;
-    
     for (NSInteger i=0; i<labels.count; i++) {
         UILabel *label = labels[i];
         [container addSubview:label];
@@ -210,7 +213,7 @@
                                                                                    toItem:previousLabel
                                                                                 attribute:NSLayoutAttributeRight
                                                                                multiplier:1
-                                                                                 constant:marginBetweenLabels];
+                                                                                 constant:kLHSCategoriesHorizontalMargin];
             [constraints addObject:marginConstraint];
         }
         
